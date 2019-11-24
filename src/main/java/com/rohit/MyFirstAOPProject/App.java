@@ -22,11 +22,11 @@ public class App {
 		//memberShipDAO.addAccount();
 		//memberShipDAO.addSillyMethod();
 		
-		Account account = new Account();
-		account.setName("rohit");
-		account.setLevel("1.0");
+		Account account = new Account("rohit","1.0");
+		//accountDAO.addAccount(account);
+		//memberShipDAO.addAccount(account);
 		
-		accountDAO.addAccount(account);
+		accountDAO.findAccounts();
 
 	}
 }

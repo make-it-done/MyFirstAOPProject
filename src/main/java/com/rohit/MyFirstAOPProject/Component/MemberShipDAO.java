@@ -16,5 +16,8 @@ public class MemberShipDAO {
 		System.out.println("Adding Silly Method");
 	}
 	
-	
+	public void addAccount(Account theAccount) {
+		
+		System.out.println("adding Account inside MemberShip Dao"+theAccount.toString());
+	}
 }

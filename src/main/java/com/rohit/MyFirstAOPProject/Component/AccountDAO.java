@@ -1,5 +1,8 @@
 package com.rohit.MyFirstAOPProject.Component;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.stereotype.Component;
 
 import com.rohit.MyFirstAOPProject.Entity.Account;
@@ -15,5 +18,14 @@ public class AccountDAO {
 		
 		System.out.println("adding Account "+theAccount.toString());
 	}
-
+	
+	public List<Account> findAccounts(){
+		List<Account> lAccounts = new ArrayList<Account>();
+		Account account = new Account("rohit", "1.0");
+		Account account2 = new Account("kumar", "2.0");
+		
+		lAccounts.add(account);
+		lAccounts.add(account2);
+		return lAccounts;
+	}
 }

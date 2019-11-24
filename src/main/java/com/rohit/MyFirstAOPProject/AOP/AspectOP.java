@@ -2,10 +2,12 @@ package com.rohit.MyFirstAOPProject.AOP;
 
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 @Aspect
 @Component
+@Order(1)
 public class AspectOP {
 //
 //	@Before("execution(public void com.rohit.MyFirstAOPProject.Component.AccountDAO.addAccount())")
