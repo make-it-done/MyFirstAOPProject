@@ -26,8 +26,13 @@ public class App {
 		//accountDAO.addAccount(account);
 		//memberShipDAO.addAccount(account);
 		
-		//accountDAO.findAccounts();
-		accountDAO.findAccounts(true);
+		accountDAO.findAccounts();
+		try {
+			accountDAO.findAccounts(true);
+		} catch (Exception e) {
+			System.out.println("Exception Happened");
+		}
+		
 
 	}
 }

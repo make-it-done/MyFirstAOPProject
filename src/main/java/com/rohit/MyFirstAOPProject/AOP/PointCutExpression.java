@@ -3,6 +3,7 @@ package com.rohit.MyFirstAOPProject.AOP;
 import java.util.List;
 
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Aspect;
@@ -86,6 +87,12 @@ public class PointCutExpression {
 	public void afterThrrowingExceptionInAccountDAO(JoinPoint joinPoint, Throwable  exp) {
 		System.out.println("After Throwing Method");
 		System.out.println("Exception Type : "+exp.getMessage()  );
+		
+	}
+	@After("execution(* com.rohit.MyFirstAOPProject.Component.AccountDAO.find*(..))")
+	public void usingAfterAnnotation(JoinPoint joinPoint) {
+		System.out.println("Using After Annotation");
+		System.out.println("");
 		
 	}
 
