@@ -5,6 +5,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import com.rohit.MyFirstAOPProject.Component.AccountDAO;
 import com.rohit.MyFirstAOPProject.Component.MemberShipDAO;
 import com.rohit.MyFirstAOPProject.Entity.Account;
+import com.rohit.MyFirstAOPProject.Service.TrafficFortuneService;
 
 /**
  * Hello world!
@@ -26,12 +27,16 @@ public class App {
 		//accountDAO.addAccount(account);
 		//memberShipDAO.addAccount(account);
 		
-		accountDAO.findAccounts();
-		try {
-			accountDAO.findAccounts(true);
-		} catch (Exception e) {
-			System.out.println("Exception Happened");
-		}
+//		accountDAO.findAccounts();
+//		try {
+//			accountDAO.findAccounts(true);
+//		} catch (Exception e) {
+//			System.out.println("Exception Happened");
+//		}
+		
+		TrafficFortuneService trafficFortuneService =applicationContext.getBean(TrafficFortuneService.class);
+		//trafficFortuneService.getFortune();
+		trafficFortuneService.getFortune(true);
 		
 
 	}
