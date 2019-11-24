@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
@@ -78,6 +79,14 @@ public class PointCutExpression {
 			account.setLevel(account.getLevel() + " Info");
 			System.out.println(account.toString());
 		}
+	}
+	
+	//Exception is propagated to main method 
+	@AfterThrowing(pointcut = "execution(* com.rohit.MyFirstAOPProject.Component.AccountDAO.find*(..))", throwing ="exp")
+	public void afterThrrowingExceptionInAccountDAO(JoinPoint joinPoint, Throwable  exp) {
+		System.out.println("After Throwing Method");
+		System.out.println("Exception Type : "+exp.getMessage()  );
+		
 	}
 
 }

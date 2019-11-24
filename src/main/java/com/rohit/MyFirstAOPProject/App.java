@@ -26,7 +26,8 @@ public class App {
 		//accountDAO.addAccount(account);
 		//memberShipDAO.addAccount(account);
 		
-		accountDAO.findAccounts();
+		//accountDAO.findAccounts();
+		accountDAO.findAccounts(true);
 
 	}
 }
